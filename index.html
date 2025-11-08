@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nouhaila Chkhonty | Software Engineer</title>
+    <meta
+      name="description"
+      content="Portfolio website for Nouhaila Chkhonty, a software engineer focused on microservices, DevOps, and modern product delivery."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Cursor follower -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <!-- Scroll progress -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+    <div class="bg-texture" aria-hidden="true">
+      <span class="blur blur-one"></span>
+      <span class="blur blur-two"></span>
+      <span class="blur blur-three"></span>
+    </div>
+
+    <div class="layout">
+      <nav class="site-nav" id="site-nav" data-reveal>
+        <a class="logo" href="#home" aria-label="Back to top">
+          <span class="logo-text">NCH</span>
+          <span class="logo-dot"></span>
+        </a>
+        <div class="nav-links" role="menu">
+          <a role="menuitem" href="#about" class="nav-link-item">
+            <span>About</span>
+          </a>
+          <a role="menuitem" href="#projects" class="nav-link-item">
+            <span>Projects</span>
+          </a>
+          <a role="menuitem" href="#experience" class="nav-link-item">
+            <span>Experience</span>
+          </a>
+          <a role="menuitem" href="#skills" class="nav-link-item">
+            <span>Skills</span>
+          </a>
+          <a role="menuitem" href="#contact" class="nav-link-item">
+            <span>Contact</span>
+          </a>
+        </div>
+        <a class="nav-cta" href="mailto:nohaila.chkhonty@gmail.com">
+          <span>Let's Talk</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </nav>
+
+      <main>
+        <section class="hero" id="home">
+          <div class="hero-text" data-reveal>
+            <p class="eyebrow">
+              <i class="fas fa-map-marker-alt"></i> Software Engineer &mdash;
+              Morocco
+            </p>
+            <h1
+              class="glitch-text"
+              data-text="I design resilient platforms end to end."
+            >
+              I design resilient platforms end to end.
+            </h1>
+            <p class="hero-lede typing-effect">
+              I am Nouhaila Chkhonty, a full stack engineer who connects stellar
+              product experiences with observable cloud backends. I specialize
+              in Java, JavaScript, and TypeScript ecosystems to launch
+              microservices, AI copilots, and enterprise-grade tooling.
+            </p>
+            <div class="hero-badges">
+              <span class="badge-item"
+                ><i class="fas fa-server"></i> Microservices</span
+              >
+              <span class="badge-item"
+                ><i class="fas fa-cloud"></i> DevOps</span
+              >
+              <span class="badge-item"
+                ><i class="fas fa-rocket"></i> Cloud Native</span
+              >
+            </div>
+            <div class="hero-cta">
+              <a class="btn primary" href="mailto:nohaila.chkhonty@gmail.com">
+                <span>Collaborate</span>
+                <i class="fas fa-paper-plane"></i>
+              </a>
+              <a
+                class="btn ghost"
+                href="https://github.com/chkhonty9"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i class="fab fa-github"></i>
+                <span>GitHub Profile</span>
+              </a>
+            </div>
+            <dl class="hero-stats">
+              <div>
+                <dt>Focus</dt>
+                <dd>Continuous delivery and platform thinking</dd>
+              </div>
+              <div>
+                <dt>Experience</dt>
+                <dd>Freelance full stack &bull; 2023 to 2025</dd>
+              </div>
+            </dl>
+          </div>
+          <div class="hero-visual" data-reveal>
+            <div class="orb orb-one"></div>
+            <div class="orb orb-two"></div>
+            <div class="orb orb-three"></div>
+            <div class="glow-card floating">
+              <div class="card-shine"></div>
+              <p class="eyebrow pulse-text">
+                <i class="fas fa-circle status-dot"></i> Currently shipping
+              </p>
+              <h3>Freelance Software Engineer</h3>
+              <ul>
+                <li>
+                  <i class="fas fa-check-circle"></i> Design microservices
+                  blueprints
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Instrument CI/CD +
+                  observability
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Coach teams on resilient
+                  delivery
+                </li>
+              </ul>
+              <div class="contact-chip">
+                <div>
+                  <p><i class="fas fa-envelope"></i> Email</p>
+                  <a href="mailto:nohaila.chkhonty@gmail.com"
+                    >nohaila.chkhonty@gmail.com</a
+                  >
+                </div>
+                <div>
+                  <p><i class="fas fa-phone"></i> Phone</p>
+                  <a href="tel:+212625614992">+212 625 614 992</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="about" data-reveal>
+          <div class="section-heading">
+            <p class="eyebrow">About</p>
+            <h2>Operator mindset with product intuition.</h2>
+            <p>
+              I craft systems that scale without drama by pairing great
+              developer experience with bulletproof delivery. My work spans
+              architecture, user experience, and DevOps automation so every
+              release is observable, secure, and meaningful for end users.
+            </p>
+          </div>
+          <div class="about-grid">
+            <article>
+              <h3>How I work</h3>
+              <p>
+                I transform ambiguous product briefs into measurable outcomes
+                using rapid prototyping, stakeholder workshops, and iterative
+                delivery.
+              </p>
+            </article>
+            <article>
+              <h3>What drives me</h3>
+              <p>
+                Curiosity, mentorship, and operational excellence. I lead teams
+                to own dependable services that stay lean and easy to extend.
+              </p>
+            </article>
+            <article>
+              <h3>Toolbox</h3>
+              <p>
+                Spring Boot, NestJS, React, Angular, Docker, Kubernetes,
+                Jenkins, AWS, PostgreSQL, MongoDB, Prometheus, Grafana.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="projects">
+          <div class="section-heading" data-reveal>
+            <p class="eyebrow">Selected Work</p>
+            <h2>Projects that blend product craft with platform rigor.</h2>
+          </div>
+
+          <div class="projects-grid">
+            <article class="project-card" data-reveal>
+              <div class="project-card__tag">Mobile App</div>
+              <h3>OrderBell</h3>
+              <p>
+                Restaurant finder application that helps users discover nearby
+                dining options based on their location with real-time
+                geolocation and intuitive search.
+              </p>
+              <ul>
+                <li>
+                  Flutter cross-platform mobile app with smooth native
+                  performance.
+                </li>
+                <li>NestJS backend with geolocation services and REST APIs.</li>
+              </ul>
+              <footer>
+                <span
+                  >NestJS &bull; Flutter &bull; Geolocation &bull; REST
+                  API</span
+                >
+              </footer>
+            </article>
+
+            <article class="project-card" data-reveal>
+              <div class="project-card__tag">Cloud Native</div>
+              <h3>Smart Lib</h3>
+              <p>
+                Online library management suite with modular services for
+                catalog, reservations, member billing, and analytics.
+              </p>
+              <ul>
+                <li>
+                  Decoupled Spring Boot microservices packaged with Docker.
+                </li>
+                <li>Provisioned through AWS RDS, ECR, and ECS for scale.</li>
+              </ul>
+              <footer>
+                <span
+                  >Spring Boot &bull; AWS RDS &bull; AWS ECR &bull; AWS ECS
+                  &bull; Kubernetes</span
+                >
+              </footer>
+            </article>
+
+            <article class="project-card" data-reveal>
+              <div class="project-card__tag">Real-time</div>
+              <h3>EzyBid</h3>
+              <p>
+                Auction experience with synchronized React, React Native, and
+                NestJS clients for sub second bidding.
+              </p>
+              <ul>
+                <li>Socket.io fan out, Kafka streams, Prisma on PostgreSQL.</li>
+                <li>Instrumentation with Loki, Prometheus, and Grafana.</li>
+              </ul>
+              <footer>
+                <span
+                  >NestJS &bull; React &bull; React Native &bull; Kafka &bull;
+                  PostgreSQL</span
+                >
+              </footer>
+            </article>
+
+            <article class="project-card" data-reveal>
+              <div class="project-card__tag">AI Assist</div>
+              <h3>Qanoon AI</h3>
+              <p>
+                Legal guidance assistant that interprets questions, surfaces
+                context, and routes users to vetted lawyers when needed.
+              </p>
+              <ul>
+                <li>
+                  LangGraph powered agents orchestrated with the OpenAI API.
+                </li>
+                <li>React Native experience with secure NestJS APIs.</li>
+              </ul>
+              <footer>
+                <span
+                  >NestJS &bull; React Native &bull; OpenAI API &bull;
+                  LangGraph</span
+                >
+              </footer>
+            </article>
+
+            <article class="project-card" data-reveal>
+              <div class="project-card__tag">Commerce</div>
+              <h3>E-commerce Platform</h3>
+              <p>
+                Multi service commerce backbone spanning catalog, checkout,
+                fulfillment, and support with CI/CD baked in.
+              </p>
+              <ul>
+                <li>
+                  MySQL for transactional data paired with MongoDB for catalog.
+                </li>
+                <li>
+                  Automated deployments via Jenkins, Docker, and Kubernetes.
+                </li>
+              </ul>
+              <footer>
+                <span
+                  >Spring Boot &bull; Angular &bull; MySQL &bull; MongoDB &bull;
+                  Jenkins</span
+                >
+              </footer>
+            </article>
+
+            <article class="project-card" data-reveal>
+              <div class="project-card__tag">Digital Commerce</div>
+              <h3>Okeyo.ma</h3>
+              <p>
+                Lifestyle commerce experience tailored for Moroccan shoppers
+                with localized merchandising and seamless checkout.
+              </p>
+              <ul>
+                <li>
+                  React web storefront and Flutter mobile app for cross-platform shopping.
+                </li>
+                <li>
+                  NestJS backend with secure payments pipeline and robust APIs.
+                </li>
+              </ul>
+              <footer>
+                <span
+                  >NestJS &bull; Flutter &bull; React &bull; PostgreSQL</span
+                >
+                <a href="https://okeyo.ma" target="_blank" rel="noreferrer"
+                  >Visit okeyo.ma</a
+                >
+              </footer>
+            </article>
+
+            <article class="project-card" data-reveal>
+              <div class="project-card__tag">Mobility</div>
+              <h3>PipYallah</h3>
+              <p>
+                Carpooling platform connecting drivers and passengers for shared
+                rides with real-time matching, in-app messaging, and payment
+                processing.
+              </p>
+              <ul>
+                <li>
+                  React Native mobile app with seamless cross-platform experience.
+                </li>
+                <li>
+                  Next.js web version with server-side rendering and Express.js backend.
+                </li>
+              </ul>
+              <footer>
+                <span
+                  >Express.js &bull; React Native &bull; Next.js &bull; Real-time</span
+                >
+              </footer>
+            </article>
+          </div>
+        </section>
+
+        <section class="section experience" id="experience">
+          <div class="section-heading" data-reveal>
+            <p class="eyebrow">Experience</p>
+            <h2>Freelancer &middot; Full Stack Developer (2023 to 2025)</h2>
+          </div>
+          <div class="experience-grid">
+            <article class="experience-card" data-reveal>
+              <h3>Full Stack Delivery</h3>
+              <p>
+                Delivered responsive React, Angular, and NestJS applications
+                with strong accessibility, testing, and product telemetry.
+              </p>
+            </article>
+            <article class="experience-card" data-reveal>
+              <h3>Microservices Craft</h3>
+              <p>
+                Built Node.js and Spring Boot microservices backed by PostgreSQL
+                and MongoDB, ensuring clean contracts across domains.
+              </p>
+            </article>
+            <article class="experience-card" data-reveal>
+              <h3>DevOps Automation</h3>
+              <p>
+                Automated CI/CD using Jenkins and Docker with progressive
+                delivery on Kubernetes and AWS infrastructure.
+              </p>
+            </article>
+            <article class="experience-card" data-reveal>
+              <h3>Reliability Focus</h3>
+              <p>
+                Instrumented services with Prometheus and Grafana so teams could
+                see performance trends and uphold SLOs.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section section--alt" id="skills">
+          <div class="section-heading" data-reveal>
+            <p class="eyebrow">Capabilities</p>
+            <h2>Technical and human skills that keep teams shipping.</h2>
+          </div>
+          <div class="skills-marquee" aria-label="Technical skills marquee">
+            <div class="marquee-track">
+              <span>Java</span>
+              <span>JavaScript</span>
+              <span>TypeScript</span>
+              <span>Spring</span>
+              <span>Express</span>
+              <span>NestJS</span>
+              <span>React</span>
+              <span>React Native</span>
+              <span>Angular</span>
+              <span>REST</span>
+              <span>GraphQL</span>
+              <span>gRPC</span>
+              <span>MySQL</span>
+              <span>MongoDB</span>
+              <span>PostgreSQL</span>
+              <span>Docker</span>
+              <span>Jenkins</span>
+              <span>Kubernetes</span>
+              <span>AWS</span>
+              <span>Azure</span>
+            </div>
+          </div>
+
+          <div class="skills-grid">
+            <article class="skill-card" data-reveal>
+              <h3>Languages Spoken</h3>
+              <ul>
+                <li>Arabic &mdash; Native</li>
+                <li>French &mdash; Advanced</li>
+                <li>English &mdash; Advanced</li>
+              </ul>
+            </article>
+            <article class="skill-card" data-reveal>
+              <h3>Personal Skills</h3>
+              <ul>
+                <li>Leadership and problem solving</li>
+                <li>Calm under pressure</li>
+                <li>Independent and team oriented</li>
+                <li>Initiative and innovation</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="section timeline" id="education">
+          <div class="section-heading" data-reveal>
+            <p class="eyebrow">Education</p>
+            <h2>Academic foundation in DevOps and engineering.</h2>
+          </div>
+          <div class="timeline-grid">
+            <article class="timeline-card" data-reveal>
+              <p class="eyebrow">2023 &mdash; 2025</p>
+              <h3>Master in DevOps and Cloud Computing</h3>
+              <p>Abdelmalek Essaadi University &middot; Highest Honours.</p>
+            </article>
+            <article class="timeline-card" data-reveal>
+              <p class="eyebrow">2020 &mdash; 2023</p>
+              <h3>Bachelor in Mathematics and Computer Science</h3>
+              <p>Abdelmalek Essaadi University.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section contact" id="contact" data-reveal>
+          <div class="contact-card">
+            <p class="eyebrow">Contact</p>
+            <h2>Let us architect your next launch.</h2>
+            <p>
+              Available for freelance engagements, remote collaboration, and
+              technical leadership missions. I pick projects where I can shape
+              the architecture, guide implementation, and mentor teams.
+            </p>
+            <div class="contact-actions">
+              <a class="btn primary" href="mailto:nohaila.chkhonty@gmail.com"
+                >Email me</a
+              >
+              <a class="btn ghost" href="tel:+212625614992">Call or WhatsApp</a>
+            </div>
+            <div class="contact-meta">
+              <div>
+                <p>Email</p>
+                <a href="mailto:nohaila.chkhonty@gmail.com"
+                  >nohaila.chkhonty@gmail.com</a
+                >
+              </div>
+              <div>
+                <p>GitHub</p>
+                <a
+                  href="https://github.com/chkhonty9"
+                  target="_blank"
+                  rel="noreferrer"
+                  >github.com/chkhonty9</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>&copy; <span id="year"></span> Nouhaila Chkhonty</p>
+        <a href="#home">Back to top</a>
+      </footer>
+    </div>
+
+    <script>
+      // Year update
+      const yearEl = document.getElementById("year");
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+
+      // Scroll progress indicator
+      window.addEventListener("scroll", () => {
+        const scrollProgress = document.getElementById("scroll-progress");
+        const scrollHeight =
+          document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercentage = (window.scrollY / scrollHeight) * 100;
+        scrollProgress.style.width = scrollPercentage + "%";
+      });
+
+      // Custom cursor
+      const cursorDot = document.querySelector("[data-cursor-dot]");
+      const cursorOutline = document.querySelector("[data-cursor-outline]");
+
+      if (window.matchMedia("(pointer: fine)").matches) {
+        window.addEventListener("mousemove", (e) => {
+          const posX = e.clientX;
+          const posY = e.clientY;
+
+          cursorDot.style.left = `${posX}px`;
+          cursorDot.style.top = `${posY}px`;
+
+          cursorOutline.animate(
+            {
+              left: `${posX}px`,
+              top: `${posY}px`,
+            },
+            { duration: 500, fill: "forwards" }
+          );
+        });
+
+        // Add hover effects
+        const interactiveElements = document.querySelectorAll(
+          "a, button, .project-card, .experience-card"
+        );
+        interactiveElements.forEach((el) => {
+          el.addEventListener("mouseenter", () => {
+            cursorDot.style.transform = "translate(-50%, -50%) scale(1.5)";
+            cursorOutline.style.transform = "translate(-50%, -50%) scale(1.5)";
+          });
+          el.addEventListener("mouseleave", () => {
+            cursorDot.style.transform = "translate(-50%, -50%) scale(1)";
+            cursorOutline.style.transform = "translate(-50%, -50%) scale(1)";
+          });
+        });
+      }
+
+      // Reveal animations
+      const observer = window.matchMedia(
+        "(prefers-reduced-motion: no-preference)"
+      ).matches
+        ? new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("revealed");
+                  observer.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.15, rootMargin: "0px 0px -50px 0px" }
+          )
+        : null;
+
+      document.querySelectorAll("[data-reveal]").forEach((el) => {
+        if (!observer) {
+          el.classList.add("revealed");
+          return;
+        }
+        observer.observe(el);
+      });
+
+      // Navigation scroll effect
+      const nav = document.getElementById("site-nav");
+      if (nav) {
+        const toggleNavState = () => {
+          nav.classList.toggle("is-scrolled", window.scrollY > 24);
+        };
+        toggleNavState();
+        window.addEventListener("scroll", toggleNavState);
+      }
+
+      // Smooth scroll for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Parallax effect for orbs
+      window.addEventListener("scroll", () => {
+        const scrolled = window.pageYOffset;
+        const orbs = document.querySelectorAll(".orb");
+        orbs.forEach((orb, index) => {
+          const speed = 0.5 + index * 0.1;
+          orb.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+      });
+
+      // Add stagger animation to project cards
+      const projectCards = document.querySelectorAll(".project-card");
+      projectCards.forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.1}s`;
+      });
+
+      // Typing effect for hero text (subtle)
+      const heroText = document.querySelector(".typing-effect");
+      if (heroText) {
+        heroText.style.opacity = "0";
+        setTimeout(() => {
+          heroText.style.transition = "opacity 1s ease-in";
+          heroText.style.opacity = "1";
+        }, 500);
+      }
+
+      // Add particle effect on mouse move
+      let particleTimeout;
+      document.addEventListener("mousemove", (e) => {
+        if (particleTimeout) return;
+
+        particleTimeout = setTimeout(() => {
+          if (Math.random() > 0.95) {
+            createParticle(e.clientX, e.clientY);
+          }
+          particleTimeout = null;
+        }, 50);
+      });
+
+      function createParticle(x, y) {
+        const particle = document.createElement("div");
+        particle.className = "particle";
+        particle.style.left = x + "px";
+        particle.style.top = y + "px";
+        document.body.appendChild(particle);
+
+        setTimeout(() => {
+          particle.remove();
+        }, 1000);
+      }
+
+      // Button ripple effect
+      document.querySelectorAll(".btn").forEach((button) => {
+        button.addEventListener("click", function (e) {
+          const ripple = document.createElement("span");
+          ripple.className = "ripple";
+          this.appendChild(ripple);
+
+          const rect = this.getBoundingClientRect();
+          const size = Math.max(rect.width, rect.height);
+          const x = e.clientX - rect.left - size / 2;
+          const y = e.clientY - rect.top - size / 2;
+
+          ripple.style.width = ripple.style.height = size + "px";
+          ripple.style.left = x + "px";
+          ripple.style.top = y + "px";
+
+          setTimeout(() => ripple.remove(), 600);
+        });
+      });
+    </script>
+  </body>
+</html>
