@@ -128,7 +128,7 @@ button { font: inherit; }
 .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(3rem, 8vw, 10rem); align-items: center; }
 .about-visual { min-height: 580px; position: relative; background: var(--ink); overflow: hidden; }
 .about-shape { position: absolute; width: 75%; aspect-ratio: 1; border-radius: 50%; background: var(--coral); left: 12%; bottom: -15%; }
-.about-shape::after { content: "YN"; position: absolute; inset: 0; display: grid; place-items: center; font: 800 clamp(6rem, 14vw, 13rem) var(--display); color: var(--lime); transform: rotate(-12deg); }
+.about-shape::after { content: "NC"; position: absolute; inset: 0; display: grid; place-items: center; font: 800 clamp(6rem, 14vw, 13rem) var(--display); color: var(--lime); transform: rotate(-12deg); }
 .about-stamp { position: absolute; top: 2rem; right: 2rem; width: 115px; height: 115px; border: 1px solid rgba(255,255,255,.5); border-radius: 50%; color: white; display: grid; place-items: center; text-align: center; font: 400 .65rem/1.6 var(--mono); transform: rotate(10deg); }
 .about-caption { position: absolute; color: white; bottom: 1.5rem; left: 1.5rem; font: 400 .6rem var(--mono); text-transform: uppercase; letter-spacing: .1em; }
 .about-lead { font: 500 clamp(1.8rem, 3.2vw, 3rem)/1.25 var(--display) !important; letter-spacing: -.035em; color: var(--ink) !important; }
