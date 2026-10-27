@@ -33,7 +33,7 @@ Uses your installed Chrome (or Edge) to capture each project site into `dist/ima
 
 ## Deployment
 
-Every push to `main` publishes `dist/` to GitHub Pages via `.github/workflows/deploy.yml`. The live site is at https://chkhonty9.github.io/portfolio/.
+Every push to `main` copies `dist/` to the `gh-pages` branch via `.github/workflows/deploy.yml`, and GitHub Pages serves that branch. The live site is at https://chkhonty9.github.io/portfolio/.
 
 ## Languages
 
