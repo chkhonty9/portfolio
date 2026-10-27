@@ -6,28 +6,52 @@
     <meta name="description" content="Nouhaila Chkhonty is a full stack software engineer building scalable web, mobile, cloud, and AI products." />
     <meta name="theme-color" content="#090c12" />
     <title>Nouhaila Chkhonty — Full Stack Software Engineer</title>
+    <script>
+      // Set language and direction before first paint to avoid a flash of the wrong layout
+      (() => {
+        try {
+          const lang = new URLSearchParams(location.search).get('lang') || localStorage.getItem('lang');
+          if (lang === 'fr' || lang === 'ar') {
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+          }
+        } catch {}
+      })();
+    </script>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2386f0cf'/%3E%3Ctext x='32' y='39' text-anchor='middle' font-family='Arial' font-size='22' font-weight='700' fill='%230b1018'%3ENC%3C/text%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="i18n.js" defer></script>
     <script src="script.js" defer></script>
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+    <div class="scroll-progress" aria-hidden="true"></div>
 
     <header class="site-header" data-header>
       <div class="nav-shell">
         <a class="brand" href="#top" aria-label="Nouhaila Chkhonty, home">
           <span class="brand-mark">NC</span>
-          <span class="brand-copy"><strong>Nouhaila Chkhonty</strong><small>Full Stack Engineer</small></span>
+          <span class="brand-copy"><strong>Nouhaila Chkhonty</strong><small data-i18n="brand.role">Full Stack Engineer</small></span>
         </a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-          <span></span><span></span><span class="sr-only">Open menu</span>
+          <span></span><span></span><span class="sr-only" data-i18n="nav.menu">Open menu</span>
         </button>
         <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
-          <a href="#work">Work</a><a href="#about">About</a><a href="#skills">Skills</a>
-          <a class="nav-cta" href="#contact">Start a conversation <span>↗</span></a>
+          <a href="#work" data-i18n="nav.work">Work</a><a href="#about" data-i18n="nav.about">About</a><a href="#skills" data-i18n="nav.skills">Skills</a>
+          <label class="lang-select">
+            <span class="sr-only">Language</span>
+            <svg class="lang-globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg>
+            <select data-lang-select>
+              <option value="en">English</option>
+              <option value="fr">Français</option>
+              <option value="ar" lang="ar">العربية</option>
+            </select>
+            <svg class="lang-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </label>
+          <a class="nav-cta" href="#contact" data-i18n="nav.cta">Start a conversation <span>↗</span></a>
         </nav>
       </div>
     </header>
@@ -37,74 +61,130 @@
         <div class="hero-grid"></div><div class="hero-glow glow-one"></div><div class="hero-glow glow-two"></div>
         <div class="hero-layout">
           <div class="hero-copy">
-            <div class="availability reveal"><span class="pulse"></span>Based in Morocco · Open to meaningful work</div>
-            <p class="eyebrow reveal">Software engineer across the whole stack</p>
-            <h1 class="reveal">Building software<br />that stays <span>strong at scale.</span></h1>
-            <p class="hero-intro reveal">I design and ship complete digital products—from Java and Spring Boot services to polished React experiences, mobile apps, and cloud infrastructure.</p>
+            <div class="availability reveal" data-i18n="hero.availability"><span class="pulse"></span>Based in Morocco · Open to meaningful work</div>
+            <p class="eyebrow reveal" data-i18n="hero.eyebrow">Software engineer across the whole stack</p>
+            <h1 class="reveal" data-i18n="hero.title">Building software<br />that stays <span>strong at scale.</span></h1>
+            <p class="hero-intro reveal" data-i18n="hero.intro">I design and ship complete digital products across both Java/Spring Boot and JavaScript/TypeScript with Node.js and NestJS—through polished React experiences, mobile apps, and cloud infrastructure.</p>
             <div class="hero-actions reveal">
-              <a class="button button-primary" href="#work">Explore my work <span>↘</span></a>
+              <a class="button button-primary" href="#work" data-i18n="hero.explore">Explore my work <span>↘</span></a>
               <a class="button button-ghost" href="https://github.com/chkhonty9" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
             </div>
           </div>
 
-          <div class="engineer-card reveal" aria-label="Engineering profile summary">
+          <div class="engineer-card reveal" aria-label="Engineering profile summary" dir="ltr">
             <div class="card-topbar"><div class="window-dots"><i></i><i></i><i></i></div><span>nouhaila.profile.ts</span><span class="card-status">● live</span></div>
             <div class="code-block" aria-hidden="true">
               <div><span class="line-no">01</span><span class="keyword">const</span> engineer = <span class="brace">{</span></div>
               <div><span class="line-no">02</span>&nbsp;&nbsp;name: <span class="string">'Nouhaila Chkhonty'</span>,</div>
-              <div><span class="line-no">03</span>&nbsp;&nbsp;focus: [<span class="string">'web'</span>, <span class="string">'mobile'</span>, <span class="string">'cloud'</span>],</div>
-              <div><span class="line-no">04</span>&nbsp;&nbsp;approach: <span class="string">'build for change'</span>,</div>
-              <div><span class="line-no">05</span>&nbsp;&nbsp;status: <span class="boolean">shipping</span></div>
-              <div><span class="line-no">06</span><span class="brace">}</span>;</div>
+              <div><span class="line-no">03</span>&nbsp;&nbsp;backend: [<span class="string">'Java'</span>, <span class="string">'Node.js'</span>],</div>
+              <div><span class="line-no">04</span>&nbsp;&nbsp;focus: [<span class="string">'web'</span>, <span class="string">'mobile'</span>, <span class="string">'cloud'</span>],</div>
+              <div><span class="line-no">05</span>&nbsp;&nbsp;approach: <span class="string">'build for change'</span>,</div>
+              <div><span class="line-no">06</span>&nbsp;&nbsp;status: <span class="boolean">shipping</span></div>
+              <div><span class="line-no">07</span><span class="brace">}</span>;<span class="caret"></span></div>
             </div>
             <div class="profile-orbit">
               <div class="orbit-ring ring-one"></div><div class="orbit-ring ring-two"></div><div class="monogram">NC</div>
-              <span class="orbit-label label-java">Java</span><span class="orbit-label label-react">React</span><span class="orbit-label label-cloud">Cloud</span>
+              <span class="orbit-label label-java">Java</span><span class="orbit-label label-node">Node.js</span><span class="orbit-label label-react">React</span><span class="orbit-label label-cloud">Cloud</span>
             </div>
             <div class="card-stack">
-              <div><small>BACKEND</small><strong>Spring Boot</strong></div><div><small>FRONTEND</small><strong>React · Angular</strong></div><div><small>PLATFORM</small><strong>Docker · K8s</strong></div>
+              <div><small>BACKEND</small><strong>Spring Boot · NestJS</strong></div><div><small>FRONTEND</small><strong>React · Angular</strong></div><div><small>PLATFORM</small><strong>Docker · K8s</strong></div>
             </div>
           </div>
         </div>
-        <div class="hero-foot reveal"><span>SCROLL TO EXPLORE</span><div class="scroll-line"></div><span>JAVA · TYPESCRIPT · CLOUD · AI</span></div>
+        <div class="hero-foot reveal"><span data-i18n="hero.scroll">SCROLL TO EXPLORE</span><div class="scroll-line"></div><span>JAVA · TYPESCRIPT · CLOUD · AI</span></div>
       </section>
 
       <section id="work" class="work section-shell section-light">
         <div class="section-heading reveal">
-          <div><p class="eyebrow">01 / Selected work</p><h2>Products built for<br />real-world complexity.</h2></div>
-          <p class="section-intro">A selection of commerce and mobility platforms spanning backend architecture, responsive web, mobile, intelligent features, and cloud delivery.</p>
+          <div><p class="eyebrow" data-i18n="work.eyebrow">01 / Selected work</p><h2 data-i18n="work.title">Products built for<br />real-world complexity.</h2></div>
+          <p class="section-intro" data-i18n="work.intro">A selection of automation, banking, commerce and mobility platforms spanning backend architecture, responsive web, mobile, intelligent features, and cloud delivery.</p>
         </div>
         <div class="project-grid">
-          <article class="project-card project-wide reveal">
+          <article class="project-card project-wide project-featured reveal">
+            <a href="https://8kit.io" target="_blank" rel="noreferrer" aria-label="Visit 8kit.io">
+              <div class="project-visual eightkit-visual">
+                <div class="browser-mockup">
+                  <div class="browser-bar"><span class="browser-dots"><i></i><i></i><i></i></span><span class="url-pill">8kit.io</span></div>
+                  <div class="site-shot"><img src="images/8kit.jpg" alt="8kit.io homepage" width="1440" height="2200" loading="lazy" decoding="async" /></div>
+                </div>
+                <div class="featured-pill" data-i18n="work.featured">★ Featured project</div>
+                <div class="project-badge" data-i18n="kit.badge">AUTOMATION · DEVELOPER TOOL</div>
+              </div>
+              <div class="project-info"><div><span class="project-index">01</span><h3>8kit</h3><p data-i18n="kit.desc">The reliability layer for production n8n workflows: duplicate prevention, ID mapping, locks and incremental sync, shipped as an n8n node, a self-hosted server and a dashboard.</p></div><ul class="tag-list" aria-label="Technologies"><li>Next.js</li><li>React</li><li>n8n</li><li>Docker</li></ul><span class="round-arrow">↗</span></div>
+            </a>
+          </article>
+
+          <article class="project-card reveal">
+            <a href="https://apps.apple.com/app/tgr-banquenet/id6815359597" target="_blank" rel="noreferrer" aria-label="View TGR BanqueNet on the App Store">
+              <div class="project-visual tgr-visual">
+                <div class="app-screens">
+                  <img class="app-screen screen-left" src="images/tgr-1.jpg" alt="TGR BanqueNet login screen" width="600" height="1299" loading="lazy" decoding="async" />
+                  <img class="app-screen screen-right" src="images/tgr-3.jpg" alt="TGR BanqueNet operations screen" width="600" height="1299" loading="lazy" decoding="async" />
+                  <img class="app-screen screen-center" src="images/tgr-2.jpg" alt="TGR BanqueNet accounts screen" width="600" height="1299" loading="lazy" decoding="async" />
+                </div>
+                <div class="project-badge" data-i18n="tgr.badge">BANKING · MOBILE APP</div>
+              </div>
+              <div class="project-info compact"><div><span class="project-index">02</span><h3>TGR BanqueNet</h3><p data-i18n="tgr.desc">Official mobile banking app of Morocco’s General Treasury: balances, transfers, beneficiaries, RIB and statements, 24/7.</p></div><span class="round-arrow">↗</span></div>
+              <ul class="tag-list card-tags" aria-label="Technologies"><li>React Native</li><li>Expo</li><li>iOS</li><li>Android</li></ul>
+            </a>
+            <div class="store-links" aria-label="TGR BanqueNet mobile app">
+              <span class="store-label"><span data-i18n="store.mobile">Mobile app</span> · <b>React Native Expo</b></span>
+              <a class="store-link" href="https://apps.apple.com/app/tgr-banquenet/id6815359597" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.6c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.77-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.28-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.42-3.65zM14.1 5.86c.63-.77 1.06-1.83.94-2.89-.91.04-2.01.61-2.66 1.37-.58.67-1.09 1.76-.96 2.8 1.02.08 2.05-.52 2.68-1.28z"/></svg>App Store</a>
+              <a class="store-link" href="https://play.google.com/store/apps/details?id=com.app.tgr" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5v17a.5.5 0 0 0 .76.43l14.5-8.5a.5.5 0 0 0 0-.86L5.76 3.07A.5.5 0 0 0 5 3.5z"/></svg>Google Play</a>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
             <a href="https://okeyo.ma" target="_blank" rel="noreferrer" aria-label="Visit Okeyo.ma">
               <div class="project-visual okeyo-visual">
                 <div class="visual-glow"></div>
                 <div class="browser-mockup">
                   <div class="browser-bar"><span class="browser-dots"><i></i><i></i><i></i></span><span class="url-pill">okeyo.ma</span></div>
-                  <div class="shop-screen"><aside><strong>OKEYO</strong><span></span><span></span><span></span><span></span></aside><div class="shop-content"><div class="shop-heading"><span>Discover</span><i></i></div><div class="product-row"><div class="product product-a"><span>▶</span></div><div class="product product-b"><span>▶</span></div><div class="product product-c"><span>▶</span></div></div></div></div>
+                  <div class="site-shot"><img src="images/okeyo.jpg" alt="Okeyo.ma homepage" width="1440" height="2200" loading="lazy" decoding="async" /></div>
                 </div>
-                <div class="project-badge">COMMERCE · WEB + MOBILE</div>
+                <div class="project-badge" data-i18n="okeyo.badge">COMMERCE · WEB + MOBILE</div>
               </div>
-              <div class="project-info"><div><span class="project-index">01</span><h3>Okeyo.ma</h3><p>Video-first shopping across web and cross-platform mobile.</p></div><ul class="tag-list" aria-label="Technologies"><li>NestJS</li><li>Flutter</li><li>React</li><li>AWS</li></ul><span class="round-arrow">↗</span></div>
+              <div class="project-info compact"><div><span class="project-index">03</span><h3>Okeyo.ma</h3><p data-i18n="okeyo.desc">Video-first shopping across web and cross-platform mobile.</p></div><span class="round-arrow">↗</span></div>
+              <ul class="tag-list card-tags" aria-label="Technologies"><li>NestJS</li><li>Flutter</li><li>React</li><li>AWS</li></ul>
             </a>
+            <div class="store-links" aria-label="Okeyo mobile app">
+              <span class="store-label"><span data-i18n="store.mobile">Mobile app</span> · <b>Flutter</b></span>
+              <a class="store-link" href="https://apps.apple.com/app/okeyo/id1628072806" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.6c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.77-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.28-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.42-3.65zM14.1 5.86c.63-.77 1.06-1.83.94-2.89-.91.04-2.01.61-2.66 1.37-.58.67-1.09 1.76-.96 2.8 1.02.08 2.05-.52 2.68-1.28z"/></svg>App Store</a>
+              <a class="store-link" href="https://play.google.com/store/apps/details?id=com.cod.okeyo" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5v17a.5.5 0 0 0 .76.43l14.5-8.5a.5.5 0 0 0 0-.86L5.76 3.07A.5.5 0 0 0 5 3.5z"/></svg>Google Play</a>
+            </div>
           </article>
 
           <article class="project-card reveal">
-            <a href="#contact" aria-label="Learn about Pippipyalah">
+            <a href="https://www.pippipyalah.ma" target="_blank" rel="noreferrer" aria-label="Visit Pippipyalah">
               <div class="project-visual pippy-visual">
-                <div class="route-map"><span class="route route-one"></span><span class="route route-two"></span><i class="stop stop-one"></i><i class="stop stop-two"></i><i class="stop stop-three"></i><i class="stop stop-four"></i></div>
-                <div class="journey-card"><small>YOUR ROUTE</small><div><strong>Casablanca</strong><span>→</span><strong>Rabat</strong></div><p>Compare bus, train & carpool</p><button type="button" tabindex="-1">Find the best trip</button></div>
-                <div class="transport-pill pill-train">TRAIN</div><div class="transport-pill pill-bus">BUS</div><div class="transport-pill pill-car">CARPOOL</div>
+                <div class="route-map"><span class="route route-one"></span><span class="route route-two"></span></div>
+                <div class="browser-mockup">
+                  <div class="browser-bar"><span class="browser-dots"><i></i><i></i><i></i></span><span class="url-pill">pippipyalah.ma</span></div>
+                  <div class="site-shot"><img src="images/pippipyalah.jpg" alt="Pippipyalah homepage" width="1440" height="1640" loading="lazy" decoding="async" /></div>
+                </div>
+                <div class="project-badge" data-i18n="pippy.badge">MOBILITY · WEB + MOBILE</div>
               </div>
-              <div class="project-info compact"><div><span class="project-index">02</span><h3>Pippipyalah</h3><p>Intercity route comparison across bus, train, and carpooling.</p></div><span class="round-arrow">↗</span></div>
+              <div class="project-info compact"><div><span class="project-index">04</span><h3>Pippipyalah</h3><p data-i18n="pippy.desc">Intercity route comparison across bus, train, and carpooling.</p></div><span class="round-arrow">↗</span></div>
               <ul class="tag-list card-tags" aria-label="Technologies"><li>Express.js</li><li>Next.js</li><li>React Native</li><li>PostgreSQL</li></ul>
             </a>
+            <div class="store-links" aria-label="Pippipyalah mobile app">
+              <span class="store-label"><span data-i18n="store.mobile">Mobile app</span> · <b>React Native</b></span>
+              <a class="store-link" href="https://apps.apple.com/app/pippipyalah-covoiturage-maroc/id1459525543" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.6c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.77-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.28-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.42-3.65zM14.1 5.86c.63-.77 1.06-1.83.94-2.89-.91.04-2.01.61-2.66 1.37-.58.67-1.09 1.76-.96 2.8 1.02.08 2.05-.52 2.68-1.28z"/></svg>App Store</a>
+              <a class="store-link" href="https://play.google.com/store/apps/details?id=com.pippipyalah" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5v17a.5.5 0 0 0 .76.43l14.5-8.5a.5.5 0 0 0 0-.86L5.76 3.07A.5.5 0 0 0 5 3.5z"/></svg>Google Play</a>
+            </div>
           </article>
 
           <article class="project-card reveal">
-            <a href="#contact" aria-label="Learn about Carnet.be">
-              <div class="project-visual carnet-visual"><div class="road-lines"><i></i><i></i><i></i></div><div class="vehicle-card"><div class="vehicle-image"><span class="wheel wheel-left"></span><span class="wheel wheel-right"></span><div class="car-body"></div></div><div class="vehicle-data"><small>SMART MATCH</small><strong>98%</strong><span></span><span></span></div></div><div class="insight-pill">✦ AI VEHICLE INSIGHTS</div></div>
-              <div class="project-info compact"><div><span class="project-index">03</span><h3>Carnet.be</h3><p>Vehicle marketplace with intelligent search insights.</p></div><span class="round-arrow">↗</span></div>
+            <a href="https://carnet.be" target="_blank" rel="noreferrer" aria-label="Visit Carnet.be">
+              <div class="project-visual carnet-visual">
+                <div class="road-lines"><i></i><i></i><i></i></div>
+                <div class="browser-mockup">
+                  <div class="browser-bar"><span class="browser-dots"><i></i><i></i><i></i></span><span class="url-pill">carnet.be</span></div>
+                  <div class="site-shot"><img src="images/carnet.jpg" alt="Carnet.be homepage" width="1440" height="2200" loading="lazy" decoding="async" /></div>
+                </div>
+                <div class="insight-pill" data-i18n="carnet.pill">✦ AI VEHICLE INSIGHTS</div>
+              </div>
+              <div class="project-info compact"><div><span class="project-index">05</span><h3>Carnet.be</h3><p data-i18n="carnet.desc">Vehicle marketplace with intelligent search insights.</p></div><span class="round-arrow">↗</span></div>
               <ul class="tag-list card-tags" aria-label="Technologies"><li>NestJS</li><li>React</li><li>PostgreSQL</li><li>AWS S3</li></ul>
             </a>
           </article>
@@ -113,36 +193,36 @@
 
       <section id="about" class="about section-shell">
         <div class="about-layout">
-          <div class="about-title reveal"><p class="eyebrow">02 / About & experience</p><h2>Engineering with<br /><span>range and rigor.</span></h2><p>I move comfortably between architecture and implementation, keeping the product, the user, and long-term maintainability in view.</p></div>
+          <div class="about-title reveal"><p class="eyebrow" data-i18n="about.eyebrow">02 / About & experience</p><h2 data-i18n="about.title">Engineering with<br /><span>range and rigor.</span></h2><p data-i18n="about.intro">I move comfortably between architecture and implementation, keeping the product, the user, and long-term maintainability in view.</p></div>
           <div class="about-content">
-            <div class="about-lead reveal"><span class="quote-mark">“</span><p>I’m <strong>Nouhaila Chkhonty</strong>, a Full Stack Software Engineer who enjoys turning complex systems into dependable, intuitive products.</p></div>
+            <div class="about-lead reveal"><span class="quote-mark">“</span><p data-i18n="about.lead">I’m <strong>Nouhaila Chkhonty</strong>, a Full Stack Software Engineer who enjoys turning complex systems into dependable, intuitive products.</p></div>
             <div class="timeline">
-              <article class="timeline-item reveal"><div class="timeline-year">2026—NOW</div><div class="timeline-copy"><div class="timeline-head"><h3>Full Stack Java Developer</h3><span>ISICOD · Rabat</span></div><p>Building internal and client-facing enterprise systems, including TGR, across Spring Boot services, integrations, Angular interfaces, CI/CD, and cloud infrastructure.</p><div class="mini-tags"><span>Java</span><span>Spring Cloud</span><span>Angular</span><span>Kubernetes</span></div></div></article>
-              <article class="timeline-item reveal"><div class="timeline-year">PROJECT</div><div class="timeline-copy"><div class="timeline-head"><h3>Carnet.be</h3><span>Belgium · Web</span></div><p>Designed backend services and REST APIs for a vehicle marketplace, integrating frontend features and an AI-powered assistant for smarter vehicle insights.</p><div class="mini-tags"><span>NestJS</span><span>React</span><span>PostgreSQL</span><span>AWS</span></div></div></article>
-              <article class="timeline-item reveal"><div class="timeline-year">PROJECT</div><div class="timeline-copy"><div class="timeline-head"><h3>Pippipyalah</h3><span>Casablanca · Web + Mobile</span></div><p>Developed a multi-platform transportation experience for comparing intercity routes across bus, train, and carpooling options.</p><div class="mini-tags"><span>Express.js</span><span>Next.js</span><span>React Native</span><span>PostgreSQL</span></div></div></article>
+              <article class="timeline-item reveal"><div class="timeline-year" data-i18n="about.now">2026—NOW</div><div class="timeline-copy"><div class="timeline-head"><h3 data-i18n="about.job">Full Stack Java Developer</h3><span>ISICOD · Rabat</span></div><p data-i18n="about.jobDesc">Building internal and client-facing enterprise systems, including TGR, across Spring Boot services, integrations, Angular interfaces, CI/CD, and cloud infrastructure.</p><div class="mini-tags"><span>Java</span><span>Spring Cloud</span><span>Angular</span><span>Kubernetes</span></div></div></article>
+              <article class="timeline-item reveal"><div class="timeline-year" data-i18n="about.project">PROJECT</div><div class="timeline-copy"><div class="timeline-head"><h3>Carnet.be</h3><span data-i18n="about.carnetPlace">Belgium · Web</span></div><p data-i18n="about.carnetDesc">Designed backend services and REST APIs for a vehicle marketplace, integrating frontend features and an AI-powered assistant for smarter vehicle insights.</p><div class="mini-tags"><span>NestJS</span><span>React</span><span>PostgreSQL</span><span>AWS</span></div></div></article>
+              <article class="timeline-item reveal"><div class="timeline-year" data-i18n="about.project">PROJECT</div><div class="timeline-copy"><div class="timeline-head"><h3>Pippipyalah</h3><span data-i18n="about.pippyPlace">Casablanca · Web + Mobile</span></div><p data-i18n="about.pippyDesc">Developed a multi-platform transportation experience for comparing intercity routes across bus, train, and carpooling options.</p><div class="mini-tags"><span>Express.js</span><span>Next.js</span><span>React Native</span><span>PostgreSQL</span></div></div></article>
             </div>
           </div>
         </div>
-        <div class="education-strip reveal"><div class="education-icon">⌁</div><div><small>EDUCATION</small><strong>Master’s in DevOps & Cloud Computing</strong></div><div><small>DISTINCTION</small><strong>Highest Honours</strong></div><div><small>UNIVERSITY</small><strong>Abdelmalek Essaadi · 2025</strong></div></div>
+        <div class="education-strip reveal"><div class="education-icon">⌁</div><div><small data-i18n="edu.label">EDUCATION</small><strong data-i18n="edu.degree">Master’s in DevOps & Cloud Computing</strong></div><div><small data-i18n="edu.distinction">DISTINCTION</small><strong data-i18n="edu.honours">Highest Honours</strong></div><div><small data-i18n="edu.university">UNIVERSITY</small><strong>Abdelmalek Essaadi · 2025</strong></div></div>
       </section>
 
       <section id="skills" class="skills section-shell section-light">
-        <div class="section-heading reveal"><div><p class="eyebrow">03 / Technical toolkit</p><h2>Built to deliver,<br />not just prototype.</h2></div><p class="section-intro">A production-minded toolkit that covers the full journey from data model and API to interface, deployment, monitoring, and iteration.</p></div>
+        <div class="section-heading reveal"><div><p class="eyebrow" data-i18n="skills.eyebrow">03 / Technical toolkit</p><h2 data-i18n="skills.title">Built to deliver,<br />not just prototype.</h2></div><p class="section-intro" data-i18n="skills.intro">A production-minded toolkit across both Java and JavaScript/TypeScript ecosystems, covering the full journey from data model and API to interface, deployment, monitoring, and iteration.</p></div>
         <div class="skill-grid">
-          <article class="skill-card reveal"><div class="skill-icon">{ }</div><span class="skill-number">01</span><h3>Backend & APIs</h3><p>Service-oriented backends, secure integrations, and APIs designed for evolution.</p><ul><li>Java · Spring Boot · Spring Cloud</li><li>NestJS · Express · Hibernate</li><li>REST · GraphQL · gRPC</li></ul></article>
-          <article class="skill-card reveal"><div class="skill-icon">◫</div><span class="skill-number">02</span><h3>Frontend & Mobile</h3><p>Responsive interfaces and cross-platform mobile products with a strong UX focus.</p><ul><li>TypeScript · React · Next.js</li><li>Angular · React Native</li><li>Flutter</li></ul></article>
-          <article class="skill-card reveal"><div class="skill-icon">△</div><span class="skill-number">03</span><h3>Cloud & DevOps</h3><p>Reliable delivery pipelines, container platforms, and observable cloud environments.</p><ul><li>Docker · Kubernetes · Helm</li><li>Jenkins · AWS · Azure</li><li>Prometheus · Grafana</li></ul></article>
-          <article class="skill-card reveal"><div class="skill-icon">✦</div><span class="skill-number">04</span><h3>Data & AI</h3><p>Practical data foundations and intelligent features integrated into real products.</p><ul><li>PostgreSQL · MySQL · MongoDB</li><li>Kafka · Prisma · Socket.io</li><li>OpenAI API · LangGraph</li></ul></article>
+          <article class="skill-card reveal"><div class="skill-icon">{ }</div><span class="skill-number">01</span><h3 data-i18n="skills.backend">Backend & APIs</h3><p data-i18n="skills.backendDesc">Service-oriented backends, secure integrations, and APIs designed for evolution.</p><ul dir="ltr"><li>Java · Spring Boot · Spring Cloud · Hibernate</li><li>JavaScript · TypeScript · Node.js · NestJS · Express</li><li>REST · GraphQL · gRPC</li></ul></article>
+          <article class="skill-card reveal"><div class="skill-icon">◫</div><span class="skill-number">02</span><h3 data-i18n="skills.frontend">Frontend & Mobile</h3><p data-i18n="skills.frontendDesc">Responsive interfaces and cross-platform mobile products with a strong UX focus.</p><ul dir="ltr"><li>TypeScript · React · Next.js</li><li>Angular · React Native</li><li>Flutter</li></ul></article>
+          <article class="skill-card reveal"><div class="skill-icon">△</div><span class="skill-number">03</span><h3 data-i18n="skills.cloud">Cloud & DevOps</h3><p data-i18n="skills.cloudDesc">Reliable delivery pipelines, container platforms, and observable cloud environments.</p><ul dir="ltr"><li>Docker · Kubernetes · Helm</li><li>Jenkins · AWS · Azure</li><li>Prometheus · Grafana</li></ul></article>
+          <article class="skill-card reveal"><div class="skill-icon">✦</div><span class="skill-number">04</span><h3 data-i18n="skills.data">Data & AI</h3><p data-i18n="skills.dataDesc">Practical data foundations and intelligent features integrated into real products.</p><ul dir="ltr"><li>PostgreSQL · MySQL · MongoDB</li><li>Kafka · Prisma · Socket.io</li><li>OpenAI API · LangGraph</li></ul></article>
         </div>
-        <div class="principle-row reveal" aria-label="Engineering principles"><span>Scalable by design</span><i>•</i><span>Clear over clever</span><i>•</i><span>Own the outcome</span><i>•</i><span>Keep learning</span></div>
+        <div class="principle-row reveal" aria-label="Engineering principles"><span data-i18n="principle.1">Scalable by design</span><i>•</i><span data-i18n="principle.2">Clear over clever</span><i>•</i><span data-i18n="principle.3">Own the outcome</span><i>•</i><span data-i18n="principle.4">Keep learning</span></div>
       </section>
 
       <section id="contact" class="contact section-shell">
-        <div class="contact-grid"></div><div class="contact-glow"></div><p class="eyebrow reveal">04 / Let’s connect</p>
-        <div class="contact-layout"><h2 class="reveal">Have a complex<br />problem to solve?</h2><div class="contact-side reveal"><p>I’m always interested in thoughtful products, ambitious engineering challenges, and good teams.</p><a class="email-link" href="mailto:nohaila.chkhonty@gmail.com"><span>nohaila.chkhonty@gmail.com</span><i>↗</i></a><a class="github-link" href="https://github.com/chkhonty9" target="_blank" rel="noreferrer">github.com/chkhonty9 <span>↗</span></a></div></div>
+        <div class="contact-grid"></div><div class="contact-glow"></div><p class="eyebrow reveal" data-i18n="contact.eyebrow">04 / Let’s connect</p>
+        <div class="contact-layout"><h2 class="reveal" data-i18n="contact.title">Have a complex<br />problem to solve?</h2><div class="contact-side reveal"><p data-i18n="contact.text">I’m always interested in thoughtful products, ambitious engineering challenges, and good teams.</p><a class="email-link" href="mailto:nohaila.chkhonty@gmail.com"><span>nohaila.chkhonty@gmail.com</span><i>↗</i></a><a class="github-link" href="https://github.com/chkhonty9" target="_blank" rel="noreferrer">github.com/chkhonty9 <span>↗</span></a></div></div>
       </section>
     </main>
 
-    <footer class="site-footer section-shell"><a class="footer-brand" href="#top"><span>NC</span> Nouhaila Chkhonty</a><p>Full Stack Software Engineer · Morocco</p><p>© <span id="year">2026</span> · Built with care</p></footer>
+    <footer class="site-footer section-shell"><a class="footer-brand" href="#top"><span>NC</span> Nouhaila Chkhonty</a><p data-i18n="footer.role">Full Stack Software Engineer · Morocco</p><p>© <span id="year">2026</span> · <span data-i18n="footer.built">Built with care</span></p></footer>
   </body>
 </html>

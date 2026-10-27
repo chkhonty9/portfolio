@@ -16,7 +16,36 @@ menuButton?.addEventListener('click', () => {
 });
 
 nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
-window.addEventListener('scroll', () => header?.classList.toggle('is-scrolled', window.scrollY > 30), { passive: true });
+const progress = document.querySelector('.scroll-progress');
+const onScroll = () => {
+  header?.classList.toggle('is-scrolled', window.scrollY > 30);
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  progress?.style.setProperty('--progress', max > 0 ? window.scrollY / max : 0);
+};
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+// Highlight the nav link for the section currently in view
+const navLinks = [...(nav?.querySelectorAll('a[href^="#"]:not(.nav-cta)') ?? [])];
+const sectionObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      navLinks.forEach((link) => link.classList.toggle('is-active', link.getAttribute('href') === `#${entry.target.id}`));
+    });
+  },
+  { rootMargin: '-45% 0px -50% 0px' }
+);
+document.querySelectorAll('main > section[id]').forEach((section) => sectionObserver.observe(section));
+
+// Soft spotlight that follows the pointer on cards
+document.querySelectorAll('.skill-card, .project-card').forEach((card) => {
+  card.addEventListener('pointermove', (event) => {
+    const rect = card.getBoundingClientRect();
+    card.style.setProperty('--mx', `${event.clientX - rect.left}px`);
+    card.style.setProperty('--my', `${event.clientY - rect.top}px`);
+  });
+});
 
 const observer = new IntersectionObserver(
   (entries) => {

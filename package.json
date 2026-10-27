@@ -1,0 +1,16 @@
+{
+  "name": "portfolio-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Nouhaila Chkhonty's portfolio site",
+  "type": "module",
+  "scripts": {
+    "dev": "vite dist --open",
+    "start": "vite dist --open",
+    "screenshots": "node scripts/screenshots.mjs"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^25.16.0",
+    "vite": "^7.1.0"
+  }
+}
