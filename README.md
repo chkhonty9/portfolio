@@ -31,6 +31,10 @@ pnpm screenshots
 
 Uses your installed Chrome (or Edge) to capture each project site into `dist/images/`. Set `CHROME_PATH` if your browser is installed somewhere unusual.
 
+## Deployment
+
+Every push to `main` publishes `dist/` to GitHub Pages via `.github/workflows/deploy.yml`. The live site is at https://chkhonty9.github.io/portfolio/.
+
 ## Languages
 
 English text lives in `dist/index.html`. French and Arabic are in `dist/i18n.js`, keyed by each element's `data-i18n` attribute. Visitors can switch language from the header, and `?lang=fr` or `?lang=ar` links straight to a language.
